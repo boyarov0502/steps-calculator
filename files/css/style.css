@@ -1,0 +1,155 @@
+*{-webkit-box-sizing:border-box; box-sizing:border-box}
+.preloader {background:#748C7B; bottom:0; left:0;  overflow:hidden; position:fixed; right:0; top:0; z-index:99999}
+.preloader img{position:absolute; margin:auto; left:0; right:0; top:0; bottom:0}
+html, body, .container {margin:0; padding:0;height:100%}
+#floater{position:relative; float:left; height:50%; width:1px; margin-top:-360px}
+body, input[type="text"]{font-family:'Roboto Condensed', sans-serif}
+h4{margin:20px 0 10px; padding-top:25px}
+.clearfix:after {display:block; content:""; clear:both}
+
+#intro{position:absolute; background:#ffffff; z-index:1; width:100%; height:100%; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center}
+#intro h1{margin:0 0 38px; color:#748C7B; font-size:18px; font-weight:700; line-height:24px; text-transform:uppercase}
+#intro p{width:520px; margin:0 0 69px; color:#8E8E8E; font-size:14px; line-height:14px}
+#intro a.enter{background:#BD3B2C; border-radius:7px; width:210px; display:block; color:#ffffff; font-size:15px; font-weight:700; line-height:48px; text-align:center; text-decoration:none; text-transform:uppercase}
+#intro img{position:absolute; top:0; right:0; bottom:0; margin:auto}
+
+.calculator{display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-orient:vertical; -webkit-box-direction:normal; -ms-flex-direction:column; flex-direction:column; clear:both; width:900px; height:720px; margin:0 auto; position:relative}
+#content{margin:66px 0; display:none}
+#content > h2{font-size:18px; font-weight:700; color:#748C7B; text-transform:uppercase; margin:0 0 20px}
+.calculator ul{margin:0}
+.calculator p{margin:0 0 10px}
+#calc{display:block; width:100%; height:544px; position:relative}
+.calc{border:7px solid #aeaeae; padding:20px 40px}
+.size{display:table; width:100%; margin-top:35px; padding:0 8px}
+.size > div{margin:16px 0}
+.size label{display:block; width:74px; float:left}
+.size label, .size span {text-transform:uppercase; font-size:10px; line-height:2.4; color:#748C7B}
+.size input{width:100px; height:24px; float:left; margin:0 18px 0 41px; padding:0 3px; border-radius:7px; border:1px solid #748C7B; font-size:13px; text-align:right; outline:none}
+.size input:focus{border:1px solid #79b98c}
+.form-child{margin:15px 0; position:relative}
+.form-child > label{display:block}
+p.choose{color:#748C7B; font-size:12px; font-weight:700; text-transform:uppercase; margin-bottom:23px}
+p.error, span.error{color:red}
+.radio{display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex; margin-top:10px !important; position:relative}
+.radio input[type='radio']{display:block; opacity:0; position:absolute; outline:none}
+.radio label{padding-left:0; margin:0 8px; width:70px; color:#748C7B; text-transform:uppercase; cursor:pointer; display:inline-block; vertical-align:top}
+.radio label img{border:1px solid #748C7B; display:block; width:70px; height:38px; opacity:.6; border-radius:9px; -webkit-transition:300ms; -o-transition:300ms; transition:300ms}
+.radio label span{display:block; line-height:15px; margin-top:10px; font-size:11px}
+.radio label p{display:none}
+.radio input[type='radio']:checked+label img{opacity:1}
+.radio input[type='radio'].error+label img{border:1px solid red}
+.radio input[type='radio']:checked+label:after{content:" "; position:absolute; width:14px; height:14px; right:15px; top:5px; background:url("../img/check.svg"); background-size:14px 14px}
+.quest{display:inline-block; width:18px; height:18px; font-size:12px; text-align:center; color:#ffffff; background:#DD9C94; border-radius:50%; line-height:1.5; position:relative; top:-2px; left:10px}
+.quest:hover{background:#BD3B2C; cursor:help}
+.answer{z-index:9999; width:360px; position:absolute; display:none; margin:0 -360px 0 auto; top:30px; left:0px; right:0px; background-color:#000; padding:5px 10px 5px 10px; color:white; opacity:0.9; border-radius:5px; font-size:14px; font-weight:400}
+
+.steps{display:inline-block; width:300px; margin-left:-5px; margin-right:-5px; margin-bottom:69px}
+.steps ul{list-style-type:none; padding:0; display:-webkit-box; display:-ms-flexbox; display:flex; position:relative}
+.steps li{display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-align:center; -ms-flex-align:center; align-items:center; margin:0 5px; min-width:36px}
+.steps li a{display:block; margin:0 auto; padding:10px; width:24px; height:24px; text-decoration:none; border:1px solid #BD3B2C; border-radius:7px; outline:none}
+.steps li a .title{display:none; font-size:20px; cursor:default}
+.steps li a .title .number{font-weight:700}
+.steps li a .title .text{text-transform:uppercase}
+.steps li.disabled a{background:#ffffff; color:#aaaaaa; cursor:default}
+.steps li.done a{background:#DD9C94; color:#BD3B2C; border:1px solid #DD9C94}
+.steps li.current a{background:#BD3B2C; color:#BD3B2C; width:36px; height:36px; cursor:default}
+.steps li.current .title{display:block; position:absolute; top:51px; left:5px}
+.content h3{display:none}
+.actions{position:absolute; right:0; bottom:0}
+.actions ul{display:-webkit-box;display:-ms-flexbox;display:flex}
+.actions li{display:-webkit-box;display:-ms-flexbox;display:flex; -webkit-box-align:center; -ms-flex-align:center; align-items:center; margin:0 5px; border-radius:2px; list-style-type:none}
+.actions li a[href="#next"]{background:#BD3B2C; border-radius:7px; width:210px; display:block; color:#ffffff; font-size:14px; font-weight:700; line-height:48px; text-align:center; text-decoration:none; text-transform:uppercase; opacity:0.3}
+.actions li a[href="#next"].next{opacity:1}
+.actions li a[href="#finish"], .again a{background:#BD3B2C; border-radius:7px; width:321px; display:block; color:#ffffff; font-size:14px; font-weight:700; line-height:48px; text-align:center; text-decoration:none; text-transform:uppercase}
+.actions li a[href="#previous"]{border:1px solid #748C7B; border-radius:7px; width:101px; display:block; color:#748C7B; font-size:12px; font-weight:700; line-height:46px; text-align:center; text-decoration:none; text-transform:uppercase; padding-top:1px}
+.actions li.disabled{display:none}
+.actions li a[href="#previous"].disabled{border:1px solid rgba(0,0,0,0); cursor:default}
+.actions li.again{display: none}
+.end{display:none !important}
+
+.box{max-width:360px; margin-left:-8px; margin-bottom:45px; float:left}
+.box-info{float:right; width:458px; position:relative; top:-195px}
+.box-info img{max-width:100%; max-height:500px; margin:0 auto 30px; display:block}
+.box-info p{color:#8E8E8E}
+p.caption-info{margin-bottom:19px; font-size:12px; font-weight:700; line-height:16px; text-transform:uppercase}
+p.descript-info{font-size:14px; line-height:17px}
+
+#calc-p-5{margin-top:-22px}
+#final_price{font-size:36px; font-weight:900; color:#bd3b2c}
+.check-list{width:654px; display:inline-block; padding:16px 25px; margin-right:12px; float:left; background:#f7f8f7; color:#748c7b}
+.check-list .value{float:left; width:160px; margin:10px 20px}
+.check-list p{text-transform:uppercase; font-weight:700; font-size:14px}
+.check-list .value span{text-transform:uppercase; font-size:12px; display:block; margin-bottom:10px}
+.calc-list{clear:both}
+.price{font-size:14px; font-weight:700; text-transform:uppercase}
+.price small{font-size:7px; font-weight:400; color:#9a9a9a; display:block; margin-bottom:19px}
+.calc-toggle{color:#a5a5a5; font-size:9px; font-weight:400; text-decoration:none; border:1px solid #a5a5a5; border-radius:20px; padding:8px 9px}
+.form{color:#8E8E8E; margin-top:32px}
+.form p{font-size:20px; text-transform:uppercase; margin-bottom:29px}
+.form div{float:left; margin-right:13px}
+.form span{font-size:12px; line-height:18px; text-transform:uppercase; margin:0 0 7px 12px; display:block}
+.form input[type="text"].error{border:1px solid red}
+.form input{width:320px; line-height:24px; padding:5px 10px; border:1px solid #8E8E8E; border-radius:7px; opacity:.65; outline:none}
+.form input:focus{opacity:1}
+.form a{color:#8E8E8E; font-size:12px; line-height:18px; text-transform:uppercase; opacity:.5; display:table; padding-top:25px}
+.form a:hover{opacity:1}
+
+#calc-list{width:400px; height:300px}
+.modal{border-radius:5px; border:5px #fff solid; background:#fff; position:absolute; top:45%; left:0; right:0; bottom:0; margin:auto; display:none; opacity:0; z-index:5; padding:20px}
+.modal .modal-close{width:21px; height:21px; position:absolute; top:10px; right:10px; cursor:pointer; display:block; color:#000}
+#overlay{z-index:3; position:fixed; background-color:#000; opacity:0.7; -moz-opacity:0.8; filter:alpha(opacity=80); width:100%; height:100%; top:0; left:0; cursor:pointer; display:none}
+
+#feedback{width:400px; height:192px}
+#feed input[type="text"]{width:48%; border-radius:4px; border:1px solid #8E8E8E; padding:5px 10px; font-size:14px; color:#8E8E8E}
+#feed input[type="text"].error{border:1px solid red}
+#feed input[type="submit"]{width:48%; border-radius:4px; outline:none; padding:5px 10px; font-size:14px; color:#444444; margin:0 auto; display:block; margin:16px auto 0}
+
+#aggrement{width:900px; height:645px}
+#aggrement ul{list-style:none; margin:10px 0; padding:0}
+#aggrement ul li{position:relative; padding:0; margin:5px 0 5px 25px}
+#aggrement ul li::before{content:"—"; height:1px; line-height:1px; display:block; position:absolute; top:13px; left:-25px}
+
+
+@media only screen and (max-width:970px){
+  #floater{display: none}
+  #calc{display:table}
+  #intro{margin:66px auto; position:relative}
+  #intro p{width:100%}
+  #intro img{display:none}
+  .calculator{width:320px; height:auto}
+  .box{margin-left:0}
+  .box-info{top:auto; width:100%}
+  .radio label{margin:0 3.6px}
+  .answer{width:320px; margin:0}
+  .actions{position:relative; margin-top:74px}
+  .actions ul{padding:0; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center}
+  .actions li a[href="#next"]{width:200px}
+  .radio label span{word-wrap:break-word}
+  .size{margin-top:10px}
+  .check-list{width:100%; float:none}
+  #calc-p-5{margin-top:0}
+  .form div{margin-right:0; margin-bottom:13px}
+  .form a{padding-top:13px}
+  .actions li a[href="#finish"], a.again{width:200px; font-size:12px}
+  h4{padding:0 45px}
+  .price{padding:0 45px}
+  .form{margin-top:56px}
+  #feedback{width:320px}
+  #calc-list{width:320px; height:350px}
+  #aggrement{width:320px; height:100%; overflow:auto}
+  .done{text-align:center}
+}
+
+@media only screen and (max-width:320px){
+  .calculator{width:290px}
+  .answer{width:290px}
+  .radio label{margin:0 12px}
+  .actions li a[href="#previous"]{width:80px}
+  .actions li a[href="#next"]{width:190px; font-size:13px}
+  .size input{margin:0 16px 0 16px}
+  .form input{width:290px}
+  .actions li a[href="#finish"], a.again{width:190px}
+  #feedback{width:290px}
+  #calc-list{width:290px; height:374px}
+  #aggrement{width:290px}
+}
